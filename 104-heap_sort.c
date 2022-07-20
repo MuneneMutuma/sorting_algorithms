@@ -86,7 +86,7 @@ void sift_down(int *array, int start_index, int max_index, size_t size)
 			tmp = array[swap_index];
 			array[swap_index] = array[start_index];
 			array[start_index] = tmp;
-			print_array(array, size;
+			print_array(array, size);
 		}
 
 		start_index = swap_index;
