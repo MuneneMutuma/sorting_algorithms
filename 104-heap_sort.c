@@ -1,5 +1,5 @@
 #include "sort.h"
-
+#include <stdio.h>
 /**
  * heap_sort - implements heap sort
  *
@@ -15,7 +15,7 @@ void heap_sort(int *array, size_t size)
 	max_index = (int)size - 1;
 
 	heapify(array, max_index);
-	for (; max_index >= 0; max_index--)
+	for (; max_index > 0; max_index--)
 	{
 		tmp = array[max_index];
 		array[max_index] = array[0];
