@@ -33,4 +33,7 @@ void merge_arrays(int *array, int a, int b, int div, int high);
 void cocktail_sort_list(listint_t **list);
 listint_t *swap_next(listint_t **iter);
 listint_t *swap_prev(listint_t **iter);
+void heap_sort(int *array, size_t size);
+void heapify(int *array, int max_index);
+void sift_down(int *array, int start_index, int max_index, size_t size);
 #endif /* SORT_H */
