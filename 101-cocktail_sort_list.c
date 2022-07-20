@@ -13,6 +13,9 @@ void cocktail_sort_list(listint_t **list)
 	listint_t *iter, *tmp;
 	int swapped = 1;
 
+	if (!list || !*list)
+		return;
+
 	while (swapped == 1)
 	{
 		swapped = 0;
@@ -20,6 +23,10 @@ void cocktail_sort_list(listint_t **list)
 		{
 			if (iter->n > iter->next->n)
 			{
+				tmp = iter->next;
+				if (*list == iter)
+					*list = tmp;
+
 				iter = swap_next(&iter);
 				swapped = 1;
 				print_list(*list);
