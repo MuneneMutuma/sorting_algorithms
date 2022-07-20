@@ -62,7 +62,8 @@ listint_t *swap_next(listint_t **iter)
 
 	tmp = (*iter)->next;
 	tmp->prev = (*iter)->prev;
-	(*iter)->prev->next = tmp;
+	if ((*iter)->prev)
+		(*iter)->prev->next = tmp;
 	(*iter)->next = tmp->next;
 
 	if (tmp->next)
@@ -87,7 +88,8 @@ listint_t *swap_prev(listint_t **iter)
 
 	tmp = (*iter)->prev;
 	tmp->next = (*iter)->next;
-	(*iter)->next->prev = tmp;
+	if ((*iter)->next)
+		(*iter)->next->prev = tmp;
 	(*iter)->prev = tmp->prev;
 	if (tmp->prev)
 		tmp->prev->next = *iter;
